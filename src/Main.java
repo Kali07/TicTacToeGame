@@ -33,6 +33,7 @@ public class Main {
             System.out.println("le debut :  " + debut);
 
             //verifier s'il y'a victoire ou pas
+            //il tourne jusqu'à ce que ces trois fonctions soeint vrais
         }while(!new_game.CaseIsFull(new_game.grille)
         && !new_game.checkCol(new_game.grille)
         && !new_game.checkRow(new_game.grille)

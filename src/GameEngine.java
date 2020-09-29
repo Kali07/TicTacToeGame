@@ -62,7 +62,7 @@ public class GameEngine {
 
         }
 
-    //regarder si une meme colonne est identique
+    //verifie si 3 champs d'une meme cololonne sont iddentiques et retourne vrai si oui
     public boolean checkCol(Case[][] grille){
         for(int i=0; i<3; i++) {
             if (CheckRandC(grille[0][i].getValue(), grille[1][i].getValue(), grille[2][i].getValue()) == true) {
@@ -78,11 +78,6 @@ public class GameEngine {
             || (CheckRandC(grille[0][2].getValue(), grille[1][1].getValue(), grille[2][0].getValue()) == true));
 
             }
-
-    //ensuite une fonction publique QUI appelle tout ça en une fois
-    /*public boolean checkVictory(){
-        return (checkCol(Case[][] grille));
-    }*/
 }
 
 

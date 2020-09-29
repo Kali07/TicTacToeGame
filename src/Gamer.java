@@ -1,5 +1,6 @@
 public class Gamer {
 
+    //Methode qui lance le jeux entre 2 joueurs
     public boolean play(int x, int y, char c, Case[][] grille){
         if((x>=0) && (x<3)){
             if((y>=0) && (y < 3)){
