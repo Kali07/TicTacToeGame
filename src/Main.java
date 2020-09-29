@@ -42,14 +42,18 @@ public class Main {
         && !new_game.checkRow(new_game.grille)
         && !new_game.checkDiago(new_game.grille));
 
+        //verifie deux situations, si la grille est pleine et que personne ne gagne
+        //la deuxieme si un joueur a gagné soit en ligne, colonne, diagonale
         if(new_game.CaseIsFull(new_game.grille) &&
                 !new_game.checkCol(new_game.grille)
                 && !new_game.checkRow(new_game.grille)
                 && !new_game.checkDiago(new_game.grille)){
             new_game.evolution();
+
             System.out.println("La Grille est plaine, pas de gagnant");
 
         }else{
+
             new_game.evolution();
 
             System.out.println("Le joueur "+ gagnant + " a gagné ");
