@@ -5,6 +5,7 @@ public class Main {
     public static void main(String[] args) {
 	// write your code here
         char debut = 'x';
+        char gagnant = ' ';
         Scanner scan = new Scanner(System.in);
         GameEngine new_game = new GameEngine();
         Gamer jeux = new Gamer();
@@ -27,10 +28,12 @@ public class Main {
             //changement de joueur
             if(debut == 'x'){
                 debut='o';
+                gagnant = 'X';
             }else{
                 debut = 'x';
+                gagnant = 'O';
             }
-            System.out.println("le debut :  " + debut);
+            //System.out.println("le debut :  " + debut);
 
             //verifier s'il y'a victoire ou pas
             //il tourne jusqu'à ce que ces trois fonctions soeint vrais
@@ -38,6 +41,19 @@ public class Main {
         && !new_game.checkCol(new_game.grille)
         && !new_game.checkRow(new_game.grille)
         && !new_game.checkDiago(new_game.grille));
+
+        if(new_game.CaseIsFull(new_game.grille) &&
+                !new_game.checkCol(new_game.grille)
+                && !new_game.checkRow(new_game.grille)
+                && !new_game.checkDiago(new_game.grille)){
+            new_game.evolution();
+            System.out.println("La Grille est plaine, pas de gagnant");
+
+        }else{
+            new_game.evolution();
+
+            System.out.println("Le joueur "+ gagnant + " a gagné ");
+        }
 
 
     }
